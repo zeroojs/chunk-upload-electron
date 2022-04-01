@@ -2,8 +2,6 @@
 dist/electron/*
 dist/web/*
 build/*
-static/resources/*
-static/temp/*
 static/.log/*
 !build/icons
 node_modules/

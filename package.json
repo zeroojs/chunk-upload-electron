@@ -1,6 +1,6 @@
 {
   "name": "zeroojs-chunk-upload",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "smallMote <wlittleyang@163.com>",
   "description": "用于局域网内文件传递的程序",
   "license": "",
@@ -17,7 +17,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "ZeroojsUpload",
+    "productName": "ZUpload",
     "extraResources": {
       "from": "./static/",
       "to": "static"

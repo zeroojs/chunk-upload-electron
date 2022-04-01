@@ -4,7 +4,7 @@
  * @Author: Minyoung
  * @Date: 2022-03-13 15:04:33
  * @LastEditors: Minyoung
- * @LastEditTime: 2022-04-02 00:21:35
+ * @LastEditTime: 2022-04-02 00:40:28
  */
 import { app, BrowserWindow, Tray, Menu, dialog, ipcMain } from 'electron'
 import { resolve } from 'path'
@@ -69,7 +69,7 @@ function initTrayIcon() {
         }
       }
   ]);
-  tray.setToolTip('Zeroojs');
+  tray.setToolTip('ZUpload');
 
   tray.on('click', () => {
     mainWindow.show();

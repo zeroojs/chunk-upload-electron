@@ -59,9 +59,6 @@ function saveTemp(file, filename) {
 app.post('/upload', uploadMid.single('file'), (req, res) => {
   const file = req.file
   const filename = req.body.filename
-  // fs.writeFileSync(path.join(resourcePath, `/${filename}`), file.buffer)
-  // 将切片文件存到缓冲区
-  // fs.writeFileSync(path.join(tempPath, `/${filename}`), file.buffer)
   saveTemp(file, filename)
   res.send({ code: 1 })
 })
@@ -91,9 +88,7 @@ function sortFiles(files = []) {
 
 // 合并
 function mergeFile(filename = '', hash = '') {
-  // let files = fs.readdirSync(resourcePath)
   const singleTempFloder = path.join(tempPath, `./${hash}`)
-  // let files = fs.readdirSync(tempPath)
   let files = fs.readdirSync(singleTempFloder)
   files = files.filter(file => file.indexOf(hash) !== -1)
   const filesBuffer = []
@@ -118,11 +113,11 @@ app.post('/merge', (req, res) => {
 })
 
 function getIPAdress() {
-  const interfaces = require('os').networkInterfaces();
+  const interfaces = require('os').networkInterfaces()
   for (const devName in interfaces) {
-    const iface = interfaces[devName];
+    const iface = interfaces[devName]
     for (let i = 0; i < iface.length; i++) {
-      const alias = iface[i];
+      const alias = iface[i]
       if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
         return alias.address
       }
